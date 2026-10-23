@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover simple recipes and save your favourites.">
+  <title>Gather — Recipe Finder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#" aria-label="Gather home">
+      <span class="brand-mark">g.</span> gather
+    </a>
+    <a class="saved-link" href="#recipes">Explore recipes ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">GOOD FOOD, NO FUSS</p>
+      <h1>Find something<br><span>delicious.</span></h1>
+      <p class="hero-text">
+        Simple recipes for everyday cravings. Pick your ingredients,
+        find your next favourite.
+      </p>
+
+      <form id="search-form" class="search-bar">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search recipes or ingredients..."
+          aria-label="Search recipes or ingredients"
+        >
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="quick-search">
+        <span>TRY:</span>
+        <button type="button" class="quick-btn" data-query="pasta">Pasta</button>
+        <button type="button" class="quick-btn" data-query="egg">Egg</button>
+        <button type="button" class="quick-btn" data-query="tomato">Tomato</button>
+      </div>
+    </section>
+
+    <section class="recipes-section" id="recipes">
+      <div class="section-top">
+        <div>
+          <p class="eyebrow">A LITTLE INSPIRATION</p>
+          <h2 id="section-title">Recipes for you</h2>
+        </div>
+        <button id="favorites-toggle" class="favorites-btn" type="button">
+          ♡ My favourites <span id="favorite-count">0</span>
+        </button>
+      </div>
+
+      <div class="filters" aria-label="Recipe filters">
+        <button class="filter active" type="button" data-category="all">All recipes</button>
+        <button class="filter" type="button" data-category="veg">Vegetarian</button>
+        <button class="filter" type="button" data-category="nonveg">Non-vegetarian</button>
+      </div>
+
+      <p id="results-count" class="results-count"></p>
+      <div id="recipe-grid" class="recipe-grid"></div>
+      <p id="empty-message" class="empty-message" hidden>
+        No recipes found. Try a different search.
+      </p>
+    </section>
+
+    <section class="note-section">
+      <span class="note-icon">✳</span>
+      <div>
+        <h2>Keep it simple.</h2>
+        <p>Good food doesn't need to be complicated. Start with what you have.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#">gather<span>.</span></a>
+    <p>Made for everyday food lovers · 2026</p>
+  </footer>
+
+  <dialog id="recipe-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header">
+      <span class="eyebrow">YOUR NEXT FAVOURITE</span>
+      <button id="close-dialog" class="close-btn" type="button" aria-label="Close recipe">×</button>
+    </div>
+    <div id="recipe-details"></div>
+  </dialog>
+</body>
+</html>
